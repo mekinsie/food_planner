@@ -10,6 +10,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+
+      <div id="nav">
+        <a href="/">Home</a>
+        <a href="/words">Words</a>
+      </div>
+    <div id="back-plate">
+
+
+      <%= yield %>
+    </div>
   </body>
 </html>

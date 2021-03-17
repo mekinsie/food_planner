@@ -13,3 +13,87 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+:root {
+  --util-max: 100%;
+
+  --page-font: 'Source Code Pro', monospace;
+  --page-lg-width: 75%;
+  --page-sml-width: 95%;
+  --page-nav-height: 5%;
+  --page-height: calc(var(--util-max) - var(--page-nav-height));
+
+  --def-light-color: beige;
+  --def-one-border-dark: 1px solid black;
+  --def-inset-fade-dark: inset 0px 0px 100px 0px #00000037;
+  --def-inset-fade-light: inset 0px 0px 100px 0px rgba(255, 255, 255, 0.048);
+  --def-box-shadow-dark: 0px 0px 4px 0px black;
+
+  --lib-rich-black: #0a0f0dfa;
+  --lib-sky-blue-crayola: #bceff6;
+}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+body {
+  box-shadow: inset 0px 0px 5px black;
+  background-color: var(--lib-sky-blue-crayola);
+  font-family: var(--page-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#nav {
+  width: 100%;
+  background-color: rgb(53, 179, 184);
+  padding: 2px 3%;
+  box-shadow:
+    inset 0px 0px 1px black,
+    0px 3px 5px rgba(0, 0, 0, 0.555);
+  height: var(--page-nav-height);
+  color: var(--def-light-color);
+  display: flex;
+  align-items: center;
+}
+#back-plate {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.007);
+  border: 1px solid rgba(129, 129, 129, 0.322);
+  box-shadow:
+    inset 0px 0px 5px rgba(0, 0, 0, 0.466),
+    0px 0px 2px rgba(0, 0, 0, 0.637);
+  height: var(--page-height);
+  margin-top: 10px;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: rgb(53, 179, 184);
+  transition: .2s;
+}
+#nav a {
+  color: rgb(253, 253, 253);
+  margin-right: 20px;
+}
+#nav a:hover{
+  color: black;
+  transition: .2s;
+}
+.links a {
+  color: rgb(55, 126, 128);
+}
+
+.links a:hover {
+  color:rgb(122, 122, 122);
+}

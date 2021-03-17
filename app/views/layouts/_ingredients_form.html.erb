@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @ingredient %>
+
+<%= form_for [@recipe, @ingredient] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit :Submit %>
+<% end %>
+
+<p><%= link_to "Return to recipe", recipe_path(@recipe) %></p>

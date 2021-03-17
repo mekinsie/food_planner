@@ -45,49 +45,52 @@ This is an app designed to explore many to many relationships while using postgr
   <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-postgres">PosgreSQL download instructions</a>
 
 ## Installation Instructions
-1. Navigate to the desired directory where you would like to clone the project to.
 
-2. Once you have chosen your desired directory, clone the github repo using the version control tool `git` (<a href="https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-and-github">download instructions</a>). Typing the following command into your terminal:
+1. Go to ☛ ( https://github.com/dcouch440/recipe_designer )
+
+2. Navigate to the desired directory where you would like to clone the project to.
+
+3. Once you have chosen your desired directory, clone the github repo using the version control tool `git` (<a href="https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-and-github">download instructions</a>). Typing the following command into your terminal:
 ```bash
-$ git clone https://github.com/mekinsie/gathered_analysis
+$ git clone https://github.com/dcouch440/recipe_designer.git
 ```
-3. Open the project in VSCode by typing the following in your terminal:
+4. Open the project in VSCode by typing the following in your terminal:
 
 ``` bash
 $ code .
 ```
 * Note: VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a>
 
-4. While located in the root directory, install gem bundler by typing:
+5. While located in the root directory, install gem bundler by typing:
 
 ``` bash
 $ gem install bundler
 ```
 
-5. Install gem bundles by typing:
+6. Install gem bundles by typing:
 
 ``` bash
 $ bundle install
 ```
 
-6. Create a database for this project by typing the following into your terminal while located in the root directory:
+7. Create a database for this project by typing the following into your terminal while located in the root directory:
 ```
 $ rake db:create
 ```
 
-7. Add all tables to the database by typing the following in your terminal:
+8. Add all tables to the database by typing the following in your terminal:
 ```
 $ rake db:migrate
 ```
 
-8. Mirror the migration database changes in the test database:
+9. Mirror the migration database changes in the test database:
 ```
 $ rake db:test:prepare
 ```
 
 The database should now be correctly set up. And you may start a local server to interact with the project.
 
-9. To start a local server, open your default browser and type "localhost:3000" into the search bar and press enter. Here, you will see the live server.
+10. To start a local server, open your default browser and type "localhost:3000" into the search bar and press enter. Here, you will see the live server.
 
 ## Running Tests
 * This application was created using test-driven development (TDD).
