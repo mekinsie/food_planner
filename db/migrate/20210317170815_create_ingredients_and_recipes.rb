@@ -14,5 +14,6 @@ class CreateIngredientsAndRecipes < ActiveRecord::Migration[5.2]
       t.belongs_to :ingredient
       t.belongs_to :recipe
     end
+
   end
 end

@@ -33,7 +33,8 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       flash[:notice] = "Recipe successfully updated!"
       redirect_to recipe_path
-    end
+
+      end
   end
 
   def destroy
