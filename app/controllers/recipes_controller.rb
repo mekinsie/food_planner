@@ -15,6 +15,8 @@ class RecipesController < ApplicationController
     if @recipe.save
       flash[:notice] = "Recipe successfully added!"
       redirect_to recipes_path
+    else
+      render :new
     end
   end
 
@@ -33,7 +35,8 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       flash[:notice] = "Recipe successfully updated!"
       redirect_to recipe_path
-
+    else
+      render :edit
       end
   end
 

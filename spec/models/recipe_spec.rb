@@ -8,7 +8,8 @@ describe Recipe do
   it { should validate_presence_of :name }
 
   it "should titleize the name value" do
-    recipe = Recipe.create({name: "the dogs salt"})
-    expect(recipe.name).to eq "The Dogs Salt"
+    recipe = Recipe.create({name: "The best day meal"})
+    expect(recipe.name).to eq "The Best Day Meal"
   end
+
 end

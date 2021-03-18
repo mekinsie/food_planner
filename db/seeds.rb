@@ -3,7 +3,7 @@ require 'faker'
 Recipe.destroy_all
 Ingredient.destroy_all
 
-10.times do
+100.times do
   recipe = Recipe.create!(name: Faker::Food.dish)
   10.times do
     ingredient = Ingredient.create!(name: Faker::Food.ingredient)
