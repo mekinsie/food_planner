@@ -3,7 +3,7 @@
 <% if @recipe.ingredients.any? %>
   <h4>Here are the ingredients for this recipe:</h4>
     <% @recipe.ingredients.each do |ingredient| %>
-      <p><%= link_to ingredient.ingredient, recipe_ingredient_path(@recipe, ingredient) %></p>
+      <p><%= link_to ingredient.name, recipe_ingredient_path(@recipe, ingredient) %></p>
   <% end %>
 <% else %>
   <p>No ingredients are listed for this recipe.</p>

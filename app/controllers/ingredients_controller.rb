@@ -1,15 +1,25 @@
 class IngredientsController < ApplicationController
 
+  def index
+    @ingredients = Ingredient.all
+    render :index
+  end
+
   def new
+    if params[:recipe_id] != nil
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.new
+    else
+      @ingredient = Ingredient.new
+    end
     render :new
   end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @ingredient = @recipe.ingredients.new(ingredient_params)
+    @ingredient = Recipe.ingredients.new(ingredient_params)
     if @ingredient.save
+      recipe.ingredients <<  @ingredient
       flash[:notice] = "You Saved!"
       redirect_to recipe_path(@recipe)
     else
@@ -18,16 +28,18 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
-    redirect_to ingredients_path
+    redirect_to recipe_path(@recipe)
   end
 
   def update
+    @recipe = Recipe.find(params[:recipe_id])
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
       flash[:notice] = "Could Not Update..."
-      redirect_to recipe_path(@ingredient.recipe)
+      redirect_to recipe_path(@recipe)
     else
       @recipe = Recipe.find(params[:recipe_id])
       render :edit
@@ -41,9 +53,13 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
-    @recipe = Recipe.find(params[:recipe_id])
-    render :show
+    if params[:recipe_id] != nil
+      @ingredient = Ingredient.find(params[:id])
+      @recipe = Recipe.find(params[:recipe_id])
+    else
+      @ingredient = Ingredient.find(params[:id])
+    end
+      render :show
   end
 
   private
