@@ -5,6 +5,8 @@ class Ingredient < ApplicationRecord
 
   has_and_belongs_to_many(:recipes)
 
+  # scope: ordered_ingredients, -> { select("ingredients.name").order("ASC")}
+
   private
     def titleize_ingredient
       self.name = self.name.titleize

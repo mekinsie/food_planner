@@ -1,14 +1,19 @@
-<h1>Ingredients</h1>
-
+<div class="title">
+  <h1>Ingredients</h1>
+</div>
 <% if @ingredients.any? %>
   <% @ingredients.each do |ingredient| %>
-    <%= link_to ingredient.name, ingredient_path(ingredient) %>
+    <div class="card">
+      <%= link_to ingredient.name, ingredient_path(ingredient) %>
+    </div>
   <% end %>
 
 <% else %>
-  <p>There are no ingredients yet. </p>
+  <p claas="title">There are no ingredients yet. </p>
 <% end %>
 
-<div class="links">
-  <%= link_to "Create new ingredient", new_ingredient_path %>
+<div class="title">
+  <div class="links">
+      <%= link_to "Create new ingredient", new_ingredient_path %>
+  </div>
 </div>

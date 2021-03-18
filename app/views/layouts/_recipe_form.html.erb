@@ -1,9 +1,13 @@
-<%= render "layouts/errors", :object => @recipe %>
-
-<%= form_for @recipe do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit :Submit %>
-<% end %>
-
-<p><%= link_to "Return to recipes", recipes_path %></p>
+<div class="title">
+  <%= render "layouts/errors", :object => @recipe %>
+</div>
+<div>
+  <%= form_for @recipe do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit :Submit %>
+  <% end %>
+</div>
+<div class="title">
+  <%= link_to "Return to recipes", recipes_path %>
+</div>
