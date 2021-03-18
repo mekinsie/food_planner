@@ -2,20 +2,22 @@
   <h1> <%= @recipe.name%></h1>
 </div>
 
-<% if @recipe.ingredients.any? %>
-  <h4>Here are the ingredients for this recipe:</h4>
-  <ul>
-    <% @recipe.ingredients.each do |ingredient| %>
-      <li><%= link_to ingredient.name, recipe_ingredient_path(@recipe, ingredient) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No ingredients are listed for this recipe.</p>
-<% end %>
+<div class="title">
+  <% if @recipe.ingredients.any? %>
+    <h4>Here are the ingredients for this recipe:</h4>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <%= link_to ingredient.name, recipe_ingredient_path(@recipe, ingredient) %><br>
+      <% end %>
+  <% else %>
+    <p>No ingredients are listed for this recipe.</p>
+  <% end %>
+</div>
 
-<div class="links">
-  <p><%= link_to "Add an ingredient", new_recipe_ingredient_path(@recipe) %></p>
-  <p><%= link_to "Edit recipe name", edit_recipe_path(@recipe) %></p>
-  <p><%= link_to "Delete recipe", recipe_path(@recipe), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
-  <p><%= link_to "Return to recipes", recipes_path %></p>
+<div class="title">
+  <div class="links">
+    <p><%= link_to "Add an ingredient", new_recipe_ingredient_path(@recipe) %></p>
+    <p><%= link_to "Edit recipe name", edit_recipe_path(@recipe) %></p>
+    <p><%= link_to "Delete recipe", recipe_path(@recipe), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
+    <p><%= link_to "Return to recipes", recipes_path %></p>
+  </div>
 </div>

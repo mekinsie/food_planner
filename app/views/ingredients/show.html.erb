@@ -1,22 +1,28 @@
-<h1><%= @ingredient.name %><h1>
-
-<h3>Recipes this ingredient is in:</h3>
-<% if @ingredient.recipes.any? %>
-    <% @ingredient.recipes.each do |recipe| %>
-      <%= link_to recipe.name, recipe_path(recipe) %>
-  <% end %>
-<% else %>
-  <p>This ingredient is not in any recipes yet.</p>
-<% end %>
-
-<div class="links">
-  <% if @recipe != nil %>
-    <p><%= link_to "Edit ingredient", edit_recipe_ingredient_path(@recipe, @ingredient) %></p>
-    <p><%= link_to "Delete ingredient", recipe_ingredient_path(@recipe, @ingredient), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
-    <p><%= link_to "Return to recipe", recipe_path(@recipe) %></p>
+<div class="title">
+  <h1><%= @ingredient.name %><h1>
+</div>
+<div class="title">
+  <h3>Recipes this ingredient is in:</h3>
+</div>
+<div class="title">
+  <% if @ingredient.recipes.any? %>
+      <% @ingredient.recipes.each do |recipe| %>
+          <%= link_to recipe.name, recipe_path(recipe) %>
+    <% end %>
   <% else %>
-    <p><%= link_to "Edit ingredient", edit_ingredient_path(@ingredient) %></p>
-    <p><%= link_to "Delete ingredient", ingredient_path(@ingredient), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
-    <p><%= link_to "Return to list of ingredients", ingredients_path(@ingredients) %></p>
+    <p>This ingredient is not in any recipes yet.</p>
   <% end %>
+</div>
+<div class="title">
+  <div class="links">
+    <% if @recipe != nil %>
+      <p><%= link_to "Edit ingredient", edit_recipe_ingredient_path(@recipe, @ingredient) %></p>
+      <p><%= link_to "Delete ingredient", recipe_ingredient_path(@recipe, @ingredient), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
+      <p><%= link_to "Return to recipe", recipe_path(@recipe) %></p>
+    <% else %>
+      <p><%= link_to "Edit ingredient", edit_ingredient_path(@ingredient) %></p>
+      <p><%= link_to "Delete ingredient", ingredient_path(@ingredient), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>
+      <p><%= link_to "Return to list of ingredients", ingredients_path(@ingredients) %></p>
+    <% end %>
+  </div>
 </div>
